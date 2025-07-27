@@ -1,0 +1,8 @@
+Ana Silva;29;Feminino;Angolana;12345678LA049;Rua das Acácias, Luanda;860000000;1;12/04/2008;16:30;VV;Ferido;Físico;Sofreu agressão durante assalto;sim
+Carlos Mendes;35;Masculino;Angolano;23456789LB150;Av. Brasil, Benguela;840000000;1;22/04/2008;16:30;SS;sim;Alto;Preso;Negou participação;sim
+Marta João;42;Feminino;Angolana;34567890LC251;Rua do Comércio, Huambo;850000000;1;16/04/2008;04:30;VV;Ileso;Psicológico;Ameaçada com arma de fogo;nao
+José Manuel;30;Masculino;Angolano;45678901LD352;Bairro Azul, Luanda;820000000;1;15/04/2014;17:30;SS;nao;Médio;Solto;Confessou furto;nao
+Helena Tomás;27;Feminino;Angolana;56789012LE453;Rua da Paz, Lubango;845510195;2;12/07/2014;23:30;VV;Hospitalizado;Físico;Vítima de violência doméstica;sim
+vid;21;Masculino;mz,mp;1234567890;sdfghgncgfxds;860000000;VV;ferido;fisico;Foi agrdido;nao;12;02/05/2004;03:30
+Vicente;21;Masculino;Moz;12345678901;Maputo;860000000;SS;medio;sim;preso;Ele diz ter sido auto defesa;sim;2;03/05/2023;04:14
+helder;20;masculino;moz;32978619786128;jhsdljfhslkjahfjlksd;841234567;VV;ferido;fisico;fksjhflkjshgvlkjsdhfglkjhdlgkjhdlkjgdsjklghgdskljfhglkdjfhgkdjhgldkjfh ksfjglksjfhglkjdhfsglkjhklgjhsdjgfd;nao;3;17/04/2025;15:13

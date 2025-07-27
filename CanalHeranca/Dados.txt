@@ -1,0 +1,6 @@
+VM;50;20;L;2003;Mocambique;S;60;16;20
+YM;17;60;I;Yassin;P;Magno;Drama
+LM;90;70;L;2002;SAfricano;N;90
+DK;20;40;I;Dikshy;J;Guinesh
+RP;60;40;I;Ri;J;Pj
+Chocolate_com_pimenta;80;38;L;2025;Brasil;N;64

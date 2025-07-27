@@ -1,0 +1,11 @@
+Interface Métodos Chamada
+MouseListener mousePressed(MouseEvent ev) Quando um botão do rato é pressionado sobre um componente
+mouseClicked(MouseEvent ev) Quando um botão do rato é pressionado e é liberado
+mouseEntered(MouseEvent ev) Quando o rato entra numa janela
+mouseExited(MouseEvent ev) Quando o rato sai de uma janela
+MouseMotionListener mouseDragged(MouseEvent ev) Quando o rato é deslocado com o botão premido
+mouseMoved(MouseEvent ev) Quando o rato é deslocado sem que o botão esteja premido
+WindowListener windowClosed() Quando a janela acabou de ser fechada
+windowOpened() Quando a janela é aberta
+WindowActivated() Quando a janela é activada
+WindowDeActivated() Quando a janela é desactivada

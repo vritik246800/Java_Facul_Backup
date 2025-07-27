@@ -1,0 +1,4 @@
+A quantidade de cada tipo de Actividade sao: 
+Game Drive: 112
+Bush Braai: 77
+Cycling: 1001

@@ -1,0 +1,4 @@
+Delio;delio@gmail.com;30;masculino;p;12
+VM;vm@gmail.com;22;masculino;a;12;15
+YM;ym@gmail.com;21;masculino;a;11;14
+Celcio;celcio@gmail.com;35;masculino;p;51

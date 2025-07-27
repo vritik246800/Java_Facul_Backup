@@ -1,0 +1,5 @@
+Mercedes;venda;5048454
+Ford;compra;4088950
+BMW;compra;9821340
+Audi;venda;8007998
+Toyta;compra;4607850

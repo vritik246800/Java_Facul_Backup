@@ -1,0 +1,3 @@
+Operacao:Levantamento; Nome(s):Elon Musk; Conta(s) afectada(s):67694160; Valor:500.00 MTs
+Operacao:Transferencia; Nome(s):Aashir Omar para Elon Musk; Conta(s) afectada(s):67459250 para 67694160; Valor:200.00 MTs
+Operacao:Deposito; Nome(s):Saiete; Conta(s) afectada(s):74059075; Valor:2,000.00 MTs

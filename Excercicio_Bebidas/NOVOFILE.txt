@@ -1,0 +1,2 @@
+A marca de cerveja :2M E o valor a pagar: 210.0
+A marca de cerveja :txillar E o valor a pagar: 640.0

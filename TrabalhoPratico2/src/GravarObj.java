@@ -1,0 +1,28 @@
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+public class GravarObj 
+{
+	public GravarObj()
+	{
+		
+	}
+	public void gravarObj(Reserva [] array)
+	{
+		try
+		{
+			FileOutputStream fo=new FileOutputStream("Reserva.dat");
+			ObjectOutputStream oo=new ObjectOutputStream(fo);
+			oo.writeObject(array);
+			oo.close();
+		}
+		catch(IOException z)
+		{
+			System.out.println(z.getMessage());
+		}
+		System.out.println("|==========================================|");
+		System.out.println("| Ficheiro de Objecto criado com SUCESSO ! |");
+		System.out.println("|==========================================|");
+	}
+}

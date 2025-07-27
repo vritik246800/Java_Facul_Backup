@@ -1,0 +1,11 @@
+nome: beatriz;sexo: feminino ;opecao: deposito;valor: 100.0
+Nome: luana;Sexo: felinina ;Opecao: Deposito;Valor: 100.0
+Nome: vicente;Sexo: masculino;Opecao: Levantamento;Valor: 100.0
+Nome: ana;Sexo: feminino ;Opecao: Transferencia;Valor: 20.0
+Nome: beatriz;Sexo: feminino ;Opecao: Deposito;Valor: 500.0
+Nome: beatriz;Sexo: feminino ;Opecao: Transferencia;Valor: 500.0
+Nome: beatriz;Sexo: feminino ;Opecao: Troca do PIN ;Valor: -2.0
+Nome: beatriz;Sexo: feminino ;Opecao: Consulta de saldo;Valor: -1.0
+Nome: luana;Sexo: felinina ;Opecao: Consulta de saldo;Valor: -1.0Nome: luana;Sexo: felinina ;Opecao: Troca do PIN ;Valor: -2.0Nome: luana;Sexo: felinina ;Opecao: Deposito;Valor: 10000.0Nome: luana;Sexo: felinina ;Opecao: Levantamento;Valor: 400.0Nome: vicente;Sexo: masculino;Opecao: Transferencia;Valor: 200.0
+Nome: carlos;Sexo: masculino;Opecao: Levantamento;Valor: 5000.0
+Nome: yasin;Sexo: masculino;Opecao: Deposito;Valor: 200.0

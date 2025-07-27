@@ -1,0 +1,5 @@
+DK;16/04/2025;Bush Braai;60;nao aplicavel
+LM;22/09/2025;Cycling;1001;nao aplicavel
+VM;24/10/2025;Game Drive;102;sim
+YM;19/12/2025;Game Drive;10;nao
+VV;17/04/2025;Bush Braai;17;nao aplicavel

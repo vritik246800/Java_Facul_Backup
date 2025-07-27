@@ -1,0 +1,10 @@
+112;futebol;15
+225;tenis;-5
+799;cavalo;10
+435;futebol;-8
+199;tenis;20
+368;cavalo;-12
+588;futebol;8
+297;tenis;-3
+189;cavalo;-50
+101;futebol;12

@@ -1,0 +1,5 @@
+Rui;14/08/1965;10;Homicidio
+Tomas;10/08/2000;20;Homicidio
+Alfredo;15/08/1954;Vitalicio;Assalto
+Oscar;10/08/1950;Vitalicio;Assalto
+Carlos;15/08/1960;5;Assalto

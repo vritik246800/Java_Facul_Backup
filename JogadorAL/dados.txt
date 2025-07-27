@@ -1,0 +1,5 @@
+2020;Futebol;12
+3142;tenis;-123
+1412;cavalos;141
+1315;futebol;657
+1512;tenis;-131

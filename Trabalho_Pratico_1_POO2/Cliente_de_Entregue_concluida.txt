@@ -1,0 +1,14 @@
+8492345678;Maria Souza;11/22/2023;entrega concluida;Honda;Civic;9842;1250;758000;p;Profissional;n;sim;5
+8294567890;Ana Oliveira;09/05/2023;entrega concluida;Ford     ;Ka     ;32987;650;250000;e;20;e;Ministerio do Interior;nao
+8297890123;Lucas Freitas;04/03/2024;entrega concluida;Nissan;Versa;45028;2200;375000;p;pessoal;n;nao;3
+8290123456;Juliana Martins;08/20/2023;entrega concluida;Jeep     ;Renegade;11200;1100;450000;p;Profissional;d;05/01/2025
+8293456789;Andre Ferreira;06/25/2023;entrega concluida;Honda;Fit     ;65230;2500;875000;p;Profissional;d;04/17/2025
+8296789012;Leticia Barros;03/21/2024;entrega concluida;Ford     ;EcoSport;14532;1400;520000;e;100;r;AutoPrime
+8299012345;Rafael Cardoso;12/03/2023;entrega concluida;Jeep     ;Compass;48003;2100;150000;e;100;r;DK
+8492345678;Maria Souza;11/22/2023;entrega concluida;Honda;Civic;9842;1250;758000;p;Profissional;n;sim;5
+8294567890;Ana Oliveira;09/05/2023;entrega concluida;Ford     ;Ka     ;32987;650;250000;e;20;e;Ministerio do Interior;nao
+8297890123;Lucas Freitas;04/03/2024;entrega concluida;Nissan;Versa;45028;2200;375000;p;pessoal;n;nao;3
+8290123456;Juliana Martins;08/20/2023;entrega concluida;Jeep     ;Renegade;11200;1100;450000;p;Profissional;d;05/01/2025
+8293456789;Andre Ferreira;06/25/2023;entrega concluida;Honda;Fit     ;65230;2500;875000;p;Profissional;d;04/17/2025
+8296789012;Leticia Barros;03/21/2024;entrega concluida;Ford     ;EcoSport;14532;1400;520000;e;100;r;AutoPrime
+8299012345;Rafael Cardoso;12/03/2023;entrega concluida;Jeep     ;Compass;48003;2100;150000;e;100;r;DK

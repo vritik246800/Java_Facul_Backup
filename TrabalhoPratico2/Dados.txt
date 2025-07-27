@@ -1,0 +1,30 @@
+844731974;Vritik;Casal     ;2024/09/16;2024/09/17;sim;sim
+865900377;Dikshy;Particular;2024/09/12;2024/09/29;sim;nao
+829123467;Ana   ;Empresa;2024/09/01;2024/09/05; sim; nao
+829874321;Joao  ;Casal     ;2024/09/02;2024/09/06; nao; sim
+843456789;Ana   ;Particular;2024/09/03;2024/09/07; sim; sim
+859985432;Lucas ;Empresa;2024/09/04;2024/09/08; nao; sim
+861236780;Fernanda;Casal   ;2024/09/05;2024/09/09;sim;nao
+878554320;Carlos;Particular;2024/09/06;2024/09/10;nao;sim
+829876431;Tatiane;Empresa;2024/09/07;2024/09/11;sim;sim
+833456781;Renato;Casal     ;2024/09/08;2024/09/12;nao;sim
+848765322;Bruna ;Particular;2024/09/09;2024/09/13;sim;nao
+859124671;Gustavo;Empresa;2024/09/10;2024/09/14; nao; sim
+869876433;Vanessa;Casal    ;2024/09/09;2024/09/15; sim; sim
+873456782;Luana  ;Particular;2024/09/12;2024/09/16; nao; sim
+821236782;Simone;Empresa;2024/09/13;2024/09/17; sim; nao
+838765323;Felipe;Casal     ;2024/09/14;2024/09/18; nao; sim
+848765434;Vicente;Particular;2024/09/15;2024/09/19; sim; sim
+853456783;Vritik;Empresa;2024/09/16;2024/09/20; nao; sim
+862346783;Yasinm;Casal     ;2024/09/17;2024/09/21; sim; nao
+877654324;Renato;Particular;2024/09/18;2024/09/22; nao; sim
+828765435;Fabiana;Empresa;2024/09/19;2024/09/23; sim; sim
+833456784;Dikshy;Casal     ;2024/09/20;2024/09/24; nao; sim
+842346784;Marcos;Particular;2024/09/21;2024/09/25; sim; nao
+857654325;Sheila;Empresa;2024/09/22;2024/09/26; nao; sim
+868765436;Fabio ;Casal     ;2024/09/23;2024/09/27; sim; sim
+873456785;Juliana;Particular;2024/09/24;2024/09/28; nao; sim
+822346785;Tania  ;Empresa;2024/09/25;2024/09/29; sim; nao
+844731974;dk    ;casal     ;2024/09/01;2024/09/01;nao;nao
+864731972;Mi    ;Casal     ;2024/09/19;2024/09/30;sim;sim
+843013640;Pi    ;Empresa;2024/09/14;2024/09/19;sim;sim

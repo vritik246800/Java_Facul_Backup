@@ -1,0 +1,20 @@
+8291234567;Joao Lima  ;04/07/2024;em processo      ;Toyota;Corolla;10235;150;350000;p;Pessoal;d;03/15/2028
+8492345678;Maria Souza;11/22/2023;entrega concluida;Honda;Civic;9842;1250;758000;p;Profissional;n;sim;5
+8693456789;Carlos Mendes;01/10/2024;em transito    ;Volkswagen;Gol     ;54891;2000;120000;E;15;R;MVL
+8294567890;Ana Oliveira;09/05/2023;entrega concluida;Ford     ;Ka     ;32987;650;250000;e;20;e;Ministerio do Interior;nao
+8495678901;Bruno Costa;04/07/2024;em processo      ;Chevrolet;Onix;17864;2400;989000;E;5;R;VV
+8696789012;Fernanda Rocha;12/19/2023;em transito    ;Hyundai;HB20;870;300;180000;p;Pessoal;n;nao;1
+8297890123;Lucas Freitas;04/03/2024;entrega concluida;Nissan;Versa;45028;2200;375000;p;pessoal;n;nao;3
+8498901234;Patricia Lima;10/11/2023;em processo      ;Renault;Sandero;7612;1800;560000;e;50;e;Ministerio de Saude;sim
+8699012345;Thiago Moreira;03/07/2024;em transito    ;Fiat     ;Argo;389;900;150000;E;53;R;LM
+8290123456;Juliana Martins;08/20/2023;entrega concluida;Jeep     ;Renegade;11200;1100;450000;p;Profissional;d;05/01/2025
+8491234567;Eduardo Alves;01/18/2024;em processo      ;Toyota;Yaris;5743;800;320000;e;50;e;Ministerio da Economia;nao
+8692345678;Larissa Gomes;07/13/2023;em transito    ;Volkswagen;Polo;2497;500;100000;p;Pessoal;d;04/16/2029
+8293456789;Andre Ferreira;06/25/2023;entrega concluida;Honda;Fit     ;65230;2500;875000;p;Profissional;d;04/17/2025
+8494567890;Camila Duarte;02/09/2024;em processo      ;Chevrolet;Tracker;9175;1600;120000;E;53;R;YM
+8695678901;Gabriel Nunes;05/30/2023;em transito    ;Fiat     ;Cronos;805;500;200000;p;Pessoal;n;sim;2
+8296789012;Leticia Barros;03/21/2024;entrega concluida;Ford     ;EcoSport;14532;1400;520000;E;100;R;AutoPrime
+8497890123;Marcelo Pinto;09/17/2023;em processo      ;Hyundai;Creta;30876;1900;230000;E;100;R;DriveMax
+8698901234;Tatiane Lima;01/29/2024;em transito    ;Renault;Logan;9201;750;280000;e;10;e;VM;sim
+8299012345;Rafael Cardoso;12/03/2023;entrega concluida;Jeep     ;Compass;48003;2100;150000;E;100;R;DK
+8490123456;Vanessa Teixeira;04/05/2024;em processo      ;Nissan;Kicks;310;130;170000;p;Profissional;d;05/21/2029

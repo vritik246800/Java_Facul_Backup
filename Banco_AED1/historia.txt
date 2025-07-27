@@ -1,0 +1,7 @@
+nome: beatriz;sexo: feminino ;opecao: deposito;valor: 100.0
+Nome: luana;Sexo: felinina ;Opecao: Deposito;Valor: 100.0
+Nome: vicente;Sexo: masculino;Opecao: Levantamento;Valor: 100.0
+Nome: ana;Sexo: feminino ;Opecao: Transferencia;Valor: 20.0
+Nome: beatriz;Sexo: feminino ;Opecao: Deposito;Valor: 500.0
+Nome: beatriz;Sexo: feminino ;Opecao: Transferencia;Valor: 500.0
+Nome: vicente;Sexo: masculino;Opecao: Deposito;Valor: 100.0

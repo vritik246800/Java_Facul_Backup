@@ -1,0 +1,5 @@
+VM;67;E;87
+YM;9;H;rua D;16;P;3
+LM;31;H;Zona Verde;50;V;sim
+DK;31;H;Zona mercado;16;V;nao
+VM7;0;E;87

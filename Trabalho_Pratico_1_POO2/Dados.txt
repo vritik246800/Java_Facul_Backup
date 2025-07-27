@@ -1,0 +1,13 @@
+8291234567;Joao Lima  ;04/07/2024;em processo      ;Toyota;Corolla;10235;150;350000;p;Pessoal;d;03/15/2028
+8693456789;Carlos Mendes;01/10/2024;em transito    ;Volkswagen;Gol     ;54891;2000;120000;e;15;r;MVL
+8495678901;Bruno Costa;04/07/2024;em processo      ;Chevrolet;Onix;17864;2400;989000;e;5;r;VV
+8696789012;Fernanda Rocha;12/19/2023;em transito    ;Hyundai;HB20;870;300;180000;p;Pessoal;n;nao;1
+8498901234;Patricia Lima;10/11/2023;em processo      ;Renault;Sandero;7612;1800;560000;e;50;e;Ministerio de Saude;sim
+8699012345;Thiago Moreira;03/07/2024;em transito    ;Fiat     ;Argo;389;900;150000;e;53;r;LM
+8491234567;Eduardo Alves;01/18/2024;em processo      ;Toyota;Yaris;5743;800;320000;e;50;e;Ministerio da Economia;nao
+8692345678;Larissa Gomes;07/13/2023;em transito    ;Volkswagen;Polo;2497;500;100000;p;Pessoal;d;04/16/2029
+8494567890;Camila Duarte;02/09/2024;em processo      ;Chevrolet;Tracker;9175;1600;120000;e;53;r;YM
+8695678901;Gabriel Nunes;05/30/2023;em transito    ;Fiat     ;Cronos;805;500;200000;p;Pessoal;n;sim;2
+8497890123;Marcelo Pinto;09/17/2023;em processo      ;Hyundai;Creta;30876;1900;230000;e;100;r;DriveMax
+8698901234;Tatiane Lima;01/29/2024;em transito    ;Renault;Logan;9201;750;280000;e;10;e;VM;sim
+8490123456;Vanessa Teixeira;04/05/2024;em processo      ;Nissan;Kicks;310;130;170000;p;Profissional;d;05/21/2029

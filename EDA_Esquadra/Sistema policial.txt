@@ -1,0 +1,37 @@
+Sistema policial 
+SuperClasse (Individuo):
+Atributos 
+
+- nome: String
+- idade: int
+- genero: String
+- nacionalidade: String
+- documentoIdentidade: String
+- endereco: String
+- telefone: String
+
+Subclasse1 (Vitima)  
+Atributos (Criterio:: VV)
+
+- estadoFisico: String (ex: "Ferido", "Ileso", "Hospitalizado")
+- tipoDano: String (ex: "Físico", "Patrimonial", "Psicológico")
+- relatorioVitima: String
+- atendimentoMedico: String (Sim/Nao)
+
+Subclasse2 (Suspeito)
+Atributos: (Criterio:: SS)
+
+- antecedentesCriminais: String (Sim/Nao)
+- grauPericulosidade: String (ex: "Baixo", "Médio", "Alto")
+- estadoDetencao: String (ex: "Preso", "Foragido", "Solto")
+- depoimento: String
+- advogadoPresente: String (Sim/nao)
+
+
+Como esta organizado o meu ficheiro de texto(dados.txt)
+Se for Vitima: 
+nome;idade;genero;nacionalidade;bI;endereco;telefone;VV;estadoFisico;tipoDano;relatorioVitima;atendimentoMedico
+
+se for Suspeito
+nome;idade;genero;nacionalidade;bI;endereco;telefone;SS;antecedentes;grauPericulidade;
+estadoDetensao;depoimento;advogadoPresente

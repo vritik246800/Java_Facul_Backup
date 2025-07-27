@@ -1,0 +1,5 @@
+1233;Vincente;cortar;1332;estudante
+4535;Yasin;pintar;522;normal
+7042;Dikshy;esticar;5262;estudante
+3156;Luana;pintar;1345;normal
+6314;Vritik;cortar;511;estudante

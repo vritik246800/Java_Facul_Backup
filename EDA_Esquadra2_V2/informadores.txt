@@ -1,0 +1,7 @@
+Josefa Miguel;110198765432Z;841110000;Av. da ONU, 50
+Alberto Chaves;110287654321Y;822221111;Rua das Mangas, Bairro Coop
+Fatima Sulemane;110376543210X;863332222;Praça dos Trabalhadores, Ed. Girassol
+Ricardo Jorge;110465432109W;874443333;Estrada Velha da Matola, Casa 1024
+Isabel dos Santos;110554321098V;855554444;Bairro da Polana Cimento A, Rua B
+dk;;844731974;Inhambane
+Vicente;12345678dfgh;123456789;Baixa

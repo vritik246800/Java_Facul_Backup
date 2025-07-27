@@ -1,0 +1,11 @@
+luana;felinina ;19;11121314;2003;10000.0
+yasin;masculino;19;12345677;2012;400.0
+vicente;masculino;20;12345675;2022;400.0
+joao;masculino;25;12345687;2032;220.0
+maria;feminino ;32;98765432;2042;260.0
+carlos;masculino;45;45671234;2052;1850.0
+ana;feminino ;28;78906543;2062;560.0
+pedro;masculino;60;65439876;2073;380.0
+juliana;feminino ;22;32147899;2082;400.0
+rafael;masculino;35;11223344;2092;6750.0
+beatriz;feminino ;50;66778899;5555;2560.0

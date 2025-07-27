@@ -1,0 +1,6 @@
+JackDaniels;whisky;65;2;1300
+Jameson;whisky;75;5;1500
+2M;cerveja;43;6;35
+txillar;cerveja;5;16;40
+summerbeers;cidra;6;15;650
+brutal;cidra;5;10;80
