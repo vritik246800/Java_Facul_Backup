@@ -15,7 +15,7 @@
 11. Lista de tarefas (To-Do List)  
 12. Gerenciador de senhas simples  
 13. Editor de texto básico  
-14. Bloco de notas (Notepad)  
+- 14. Bloco de notas (Notepad)  
 15. Timer / cronômetro  
 16. Jogo da cobrinha (Snake)  
 17. Jogo de Pong em 2D  

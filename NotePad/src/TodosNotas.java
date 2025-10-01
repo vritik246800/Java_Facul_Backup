@@ -228,7 +228,7 @@ public class TodosNotas extends JFrame
 					}
 				);
 	}
-	public static void main(String[] args) 
+	void main()
 	{
 		new TodosNotas();
 	}
