@@ -31,7 +31,7 @@ public class FuncionarioDAO
 	}
 	public void visualizar()
 	{
-		String cmd2="select * from funcionario";
+		String cmd2="select * from funcionario;";
 		try
 		{
 			Statement pstm2=conn.createStatement();
