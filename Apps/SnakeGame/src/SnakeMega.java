@@ -17,7 +17,7 @@
    Optional (joystick):
      javac -cp jinput.jar SnakeMega.java
      java -cp .:jinput.jar SnakeMega
-*/
+ */
 
 import javax.swing.*;
 import javax.swing.Timer;
@@ -44,6 +44,7 @@ public class SnakeMega {
 
 /* ---------- Game Window + Menu ---------- */
 class GameWindow {
+
     private final JFrame frame;
     private final CardLayout cards;
     private final JPanel container;
@@ -85,6 +86,7 @@ class GameWindow {
 
 /* ---------- Menu Panel ---------- */
 class MenuPanel extends JPanel {
+
     private final GameWindow parent;
     private final GamePanel gamePanel;
     private JComboBox<String> skinCombo, levelCombo;
@@ -120,7 +122,9 @@ class MenuPanel extends JPanel {
             if (fc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
                 File f = fc.getSelectedFile();
                 boolean ok = gamePanel.loadReplayFromFile(f);
-                if (ok) parent.showGame();
+                if (ok) {
+                    parent.showGame();
+                }
             }
         });
         add(loadReplayBtn);
@@ -198,6 +202,7 @@ class MenuPanel extends JPanel {
 
 /* ---------- Game Panel (core) ---------- */
 class GamePanel extends JPanel implements ActionListener {
+
     // Fixed grid for performance
     private static final int SCREEN_WIDTH = 600;
     private static final int SCREEN_HEIGHT = 600;
@@ -266,24 +271,40 @@ class GamePanel extends JPanel implements ActionListener {
         initGame();
     }
 
-    public void setSkin(Skin s) { this.skin = s; repaint(); }
-    public void setLevel(int lvl) { this.level = Math.max(1, Math.min(10, lvl)); }
-    public void setSoundEnabled(boolean v) { this.soundEnabled = v; }
-    public void setAiEnabled(boolean v) { this.aiEnabled = v; }
+    public void setSkin(Skin s) {
+        this.skin = s;
+        repaint();
+    }
+
+    public void setLevel(int lvl) {
+        this.level = Math.max(1, Math.min(10, lvl));
+    }
+
+    public void setSoundEnabled(boolean v) {
+        this.soundEnabled = v;
+    }
+
+    public void setAiEnabled(boolean v) {
+        this.aiEnabled = v;
+    }
 
     private void loadHighscore() {
         try {
             if (highscoreFile.exists()) {
                 List<String> lines = Files.readAllLines(highscoreFile.toPath());
-                if (!lines.isEmpty()) highscore = Integer.parseInt(lines.get(0));
+                if (!lines.isEmpty()) {
+                    highscore = Integer.parseInt(lines.get(0));
+                }
             }
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+        }
     }
 
     private void saveHighscore() {
         try {
             Files.write(highscoreFile.toPath(), Collections.singletonList(String.valueOf(highscore)));
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+        }
     }
 
     private void initGame() {
@@ -328,7 +349,11 @@ class GamePanel extends JPanel implements ActionListener {
     }
 
     private boolean isOnSnake(int px, int py) {
-        for (int i = 0; i < bodyParts; i++) if (x[i] == px && y[i] == py) return true;
+        for (int i = 0; i < bodyParts; i++) {
+            if (x[i] == px && y[i] == py) {
+                return true;
+            }
+        }
         return false;
     }
 
@@ -340,11 +365,14 @@ class GamePanel extends JPanel implements ActionListener {
             ay = random.nextInt(ROWS) * UNIT_SIZE;
             attempts++;
         } while ((isOnSnake(ax, ay) || obstacles.contains(new Point(ax, ay))) && attempts < 2000);
-        appleX = ax; appleY = ay;
+        appleX = ax;
+        appleY = ay;
     }
 
     private void startTimer() {
-        if (timer != null) timer.stop();
+        if (timer != null) {
+            timer.stop();
+        }
         timer = new Timer(delay, this);
         timer.start();
     }
@@ -352,7 +380,9 @@ class GamePanel extends JPanel implements ActionListener {
     // Game loop
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (!running) return;
+        if (!running) {
+            return;
+        }
         // joystick poll
         joystick.poll();
 
@@ -385,8 +415,12 @@ class GamePanel extends JPanel implements ActionListener {
         // grid optional
         if (showGrid) {
             g.setColor(new Color(30, 30, 30));
-            for (int i = 0; i <= COLS; i++) g.drawLine(i * UNIT_SIZE, 0, i * UNIT_SIZE, SCREEN_HEIGHT);
-            for (int j = 0; j <= ROWS; j++) g.drawLine(0, j * UNIT_SIZE, SCREEN_WIDTH, j * UNIT_SIZE);
+            for (int i = 0; i <= COLS; i++) {
+                g.drawLine(i * UNIT_SIZE, 0, i * UNIT_SIZE, SCREEN_HEIGHT);
+            }
+            for (int j = 0; j <= ROWS; j++) {
+                g.drawLine(0, j * UNIT_SIZE, SCREEN_WIDTH, j * UNIT_SIZE);
+            }
         }
 
         // obstacles
@@ -401,8 +435,11 @@ class GamePanel extends JPanel implements ActionListener {
         // snake
         for (int i = 0; i < bodyParts; i++) {
             int sx = x[i], sy = y[i];
-            if (i == 0) skin.drawHead(g, sx, sy, UNIT_SIZE);
-            else skin.drawBody(g, sx, sy, UNIT_SIZE, i, bodyParts);
+            if (i == 0) {
+                skin.drawHead(g, sx, sy, UNIT_SIZE); 
+            }else {
+                skin.drawBody(g, sx, sy, UNIT_SIZE, i, bodyParts);
+            }
         }
 
         // particles
@@ -419,7 +456,7 @@ class GamePanel extends JPanel implements ActionListener {
         if (paused) {
             g.setFont(new Font("Arial", Font.BOLD, 36));
             g.setColor(Color.YELLOW);
-            g.drawString("PAUSED", SCREEN_WIDTH/2 - 70, SCREEN_HEIGHT/2);
+            g.drawString("PAUSED", SCREEN_WIDTH / 2 - 70, SCREEN_HEIGHT / 2);
         }
 
         g.dispose();
@@ -431,29 +468,37 @@ class GamePanel extends JPanel implements ActionListener {
     private void move() {
         // move body
         for (int i = bodyParts; i > 0; i--) {
-            x[i] = x[i-1];
-            y[i] = y[i-1];
+            x[i] = x[i - 1];
+            y[i] = y[i - 1];
         }
         // head
         switch (direction) {
-            case 'U' -> y[0] -= UNIT_SIZE;
-            case 'D' -> y[0] += UNIT_SIZE;
-            case 'L' -> x[0] -= UNIT_SIZE;
-            case 'R' -> x[0] += UNIT_SIZE;
+            case 'U' ->
+                y[0] -= UNIT_SIZE;
+            case 'D' ->
+                y[0] += UNIT_SIZE;
+            case 'L' ->
+                x[0] -= UNIT_SIZE;
+            case 'R' ->
+                x[0] += UNIT_SIZE;
         }
     }
 
     public void changeDirection(Direction d) {
         char newDir = switch (d) {
-            case UP -> 'U';
-            case DOWN -> 'D';
-            case LEFT -> 'L';
-            case RIGHT -> 'R';
+            case UP ->
+                'U';
+            case DOWN ->
+                'D';
+            case LEFT ->
+                'L';
+            case RIGHT ->
+                'R';
         };
-        if ((direction == 'L' && newDir == 'R') ||
-            (direction == 'R' && newDir == 'L') ||
-            (direction == 'U' && newDir == 'D') ||
-            (direction == 'D' && newDir == 'U')) {
+        if ((direction == 'L' && newDir == 'R')
+                || (direction == 'R' && newDir == 'L')
+                || (direction == 'U' && newDir == 'D')
+                || (direction == 'D' && newDir == 'U')) {
             return; // no reverse
         }
         if (direction != newDir) {
@@ -466,8 +511,10 @@ class GamePanel extends JPanel implements ActionListener {
         if (x[0] == appleX && y[0] == appleY) {
             bodyParts++;
             applesEaten++;
-            particles.emit(appleX + UNIT_SIZE/2, appleY + UNIT_SIZE/2, skin);
-            if (soundEnabled) clipEat.play();
+            particles.emit(appleX + UNIT_SIZE / 2, appleY + UNIT_SIZE / 2, skin);
+            if (soundEnabled) {
+                clipEat.play();
+            }
             // speed up smoothly
             delay = Math.max(30, delay - 2);
             timer.setDelay(delay);
@@ -491,11 +538,15 @@ class GamePanel extends JPanel implements ActionListener {
         }
         // walls
         if (x[0] < 0 || x[0] >= SCREEN_WIDTH || y[0] < 0 || y[0] >= SCREEN_HEIGHT) {
-            gameOver(); return;
+            gameOver();
+            return;
         }
         // obstacles
         for (Point p : obstacles) {
-            if (x[0] == p.x && y[0] == p.y) { gameOver(); return; }
+            if (x[0] == p.x && y[0] == p.y) {
+                gameOver();
+                return;
+            }
         }
     }
 
@@ -507,7 +558,9 @@ class GamePanel extends JPanel implements ActionListener {
             highscore = applesEaten;
             saveHighscore();
         }
-        if (soundEnabled) clipGameOver.play();
+        if (soundEnabled) {
+            clipGameOver.play();
+        }
         // popup to ask replay/save
         SwingUtilities.invokeLater(() -> {
             String[] opts = {"Restart", "Save Replay", "Back to Menu"};
@@ -540,7 +593,9 @@ class GamePanel extends JPanel implements ActionListener {
 
     private void playReplay(Replay rec) {
         // stop current game
-        if (timer != null) timer.stop();
+        if (timer != null) {
+            timer.stop();
+        }
         running = false;
         paused = false;
         // start a runner thread to play back events deterministically
@@ -556,7 +611,9 @@ class GamePanel extends JPanel implements ActionListener {
                 for (Replay.Event e : rec.events) {
                     long t = e.timestamp;
                     long now = System.currentTimeMillis() - start;
-                    if (t > now) Thread.sleep(t - now);
+                    if (t > now) {
+                        Thread.sleep(t - now);
+                    }
                     if (e.type.equals("MOVE")) {
                         char d = e.data.charAt(0);
                         direction = d;
@@ -588,23 +645,34 @@ class GamePanel extends JPanel implements ActionListener {
 
     // Input handlers
     private class KL extends KeyAdapter {
+
         @Override
         public void keyPressed(KeyEvent e) {
             int k = e.getKeyCode();
-            if (k == KeyEvent.VK_LEFT || k == KeyEvent.VK_A) changeDirection(Direction.LEFT);
-            else if (k == KeyEvent.VK_RIGHT || k == KeyEvent.VK_D) changeDirection(Direction.RIGHT);
-            else if (k == KeyEvent.VK_UP || k == KeyEvent.VK_W) changeDirection(Direction.UP);
-            else if (k == KeyEvent.VK_DOWN || k == KeyEvent.VK_S) changeDirection(Direction.DOWN);
-            else if (k == KeyEvent.VK_P) paused = !paused;
-            else if (k == KeyEvent.VK_G) showGrid = !showGrid;
-            else if (k == KeyEvent.VK_R) initGame();
-            else if (k == KeyEvent.VK_H) { saveReplayQuick(); }
+            if (k == KeyEvent.VK_LEFT || k == KeyEvent.VK_A) {
+                changeDirection(Direction.LEFT); 
+            }else if (k == KeyEvent.VK_RIGHT || k == KeyEvent.VK_D) {
+                changeDirection(Direction.RIGHT); 
+            }else if (k == KeyEvent.VK_UP || k == KeyEvent.VK_W) {
+                changeDirection(Direction.UP); 
+            }else if (k == KeyEvent.VK_DOWN || k == KeyEvent.VK_S) {
+                changeDirection(Direction.DOWN); 
+            }else if (k == KeyEvent.VK_P) {
+                paused = !paused; 
+            }else if (k == KeyEvent.VK_G) {
+                showGrid = !showGrid; 
+            }else if (k == KeyEvent.VK_R) {
+                initGame(); 
+            }else if (k == KeyEvent.VK_H) {
+                saveReplayQuick();
+            }
             // record keypress event
-            recorder.recordEvent("KEY_"+k, System.currentTimeMillis());
+            recorder.recordEvent("KEY_" + k, System.currentTimeMillis());
         }
     }
 
     private class ML extends MouseAdapter {
+
         @Override
         public void mouseClicked(MouseEvent e) {
             requestFocusInWindow();
@@ -617,45 +685,69 @@ class GamePanel extends JPanel implements ActionListener {
     }
 
     // For AI accessors
-    public int getCols() { return COLS; }
-    public int getRows() { return ROWS; }
-    public int getUnit() { return UNIT_SIZE; }
+    public int getCols() {
+        return COLS;
+    }
+
+    public int getRows() {
+        return ROWS;
+    }
+
+    public int getUnit() {
+        return UNIT_SIZE;
+    }
+
     public boolean isCellBlocked(int cx, int cy, int snakeLen, int[] sx, int[] sy) {
         int px = cx * UNIT_SIZE, py = cy * UNIT_SIZE;
         // check obstacles
-        if (obstacles.contains(new Point(px, py))) return true;
+        if (obstacles.contains(new Point(px, py))) {
+            return true;
+        }
         // check snake body
         for (int i = 0; i < snakeLen; i++) {
-            if (sx[i] == px && sy[i] == py) return true;
+            if (sx[i] == px && sy[i] == py) {
+                return true;
+            }
         }
         return false;
     }
 
     // Replay recorder inner classes
     static class Replay {
+
         static class Event {
+
             final String type;
             final long timestamp;
             final String data;
-            Event(String t, long ts, String d) { type = t; timestamp = ts; data = d; }
+
+            Event(String t, long ts, String d) {
+                type = t;
+                timestamp = ts;
+                data = d;
+            }
         }
         final List<Event> events = new ArrayList<>();
+
         String serialize() {
             StringBuilder sb = new StringBuilder();
             for (Event e : events) {
-                sb.append(e.type).append("|").append(e.timestamp).append("|").append(e.data.replace("|","/")).append("\n");
+                sb.append(e.type).append("|").append(e.timestamp).append("|").append(e.data.replace("|", "/")).append("\n");
             }
             return sb.toString();
         }
+
         static Replay loadFromFile(File f) throws IOException {
             List<String> lines = Files.readAllLines(f.toPath());
             Replay r = new Replay();
             for (String l : lines) {
-                if (l.trim().isEmpty()) continue;
-                String[] parts = l.split("\\|",3);
+                if (l.trim().isEmpty()) {
+                    continue;
+                }
+                String[] parts = l.split("\\|", 3);
                 String type = parts[0];
                 long ts = Long.parseLong(parts[1]);
-                String data = parts.length>2?parts[2]:"";
+                String data = parts.length > 2 ? parts[2] : "";
                 r.events.add(new Event(type, ts, data));
             }
             return r;
@@ -664,6 +756,7 @@ class GamePanel extends JPanel implements ActionListener {
 
     // Recorder implementation (records moves & events with timestamps relative)
     static class ReplayRecorder {
+
         private final List<Replay.Event> events = Collections.synchronizedList(new ArrayList<>());
         private long startTime = System.currentTimeMillis();
         private volatile boolean enabled = true;
@@ -674,37 +767,59 @@ class GamePanel extends JPanel implements ActionListener {
         }
 
         public void recordMove(char dir) {
-            if (!enabled) return;
+            if (!enabled) {
+                return;
+            }
             long t = System.currentTimeMillis() - startTime;
-            events.add(new Replay.Event("MOVE", t, ""+dir));
+            events.add(new Replay.Event("MOVE", t, "" + dir));
         }
+
         public void recordEvent(String type, long absTs) {
-            if (!enabled) return;
+            if (!enabled) {
+                return;
+            }
             long t = absTs - startTime;
             events.add(new Replay.Event(type, t, ""));
         }
+
         public void tick() {
             // called each game tick for timing alignment (optionally record)
         }
+
         public Replay exportReplay() {
             Replay r = new Replay();
             r.events.addAll(events);
             return r;
         }
-        public void disable() { enabled = false; }
-        public void enable() { enabled = true; startTime = System.currentTimeMillis(); }
+
+        public void disable() {
+            enabled = false;
+        }
+
+        public void enable() {
+            enabled = true;
+            startTime = System.currentTimeMillis();
+        }
     }
 
     // Small ClipPlayer for WAV playback without hard failure if missing
     static class ClipPlayer {
+
         private final String fileName;
-        public ClipPlayer(String fn) { this.fileName = fn; }
+
+        public ClipPlayer(String fn) {
+            this.fileName = fn;
+        }
+
         public void play() {
             // Lightweight play: use Toolkit beep fallback if file missing
             new Thread(() -> {
                 try {
                     File f = new File(fileName);
-                    if (!f.exists()) { Toolkit.getDefaultToolkit().beep(); return; }
+                    if (!f.exists()) {
+                        Toolkit.getDefaultToolkit().beep();
+                        return;
+                    }
                     javax.sound.sampled.AudioInputStream ais = javax.sound.sampled.AudioSystem.getAudioInputStream(f);
                     javax.sound.sampled.Clip clip = javax.sound.sampled.AudioSystem.getClip();
                     clip.open(ais);
@@ -722,99 +837,115 @@ enum Skin {
     NEON {
         @Override
         void drawHead(Graphics2D g, int x, int y, int size) {
-            GradientPaint gp = new GradientPaint(x, y, Color.CYAN, x+size, y+size, Color.MAGENTA);
+            GradientPaint gp = new GradientPaint(x, y, Color.CYAN, x + size, y + size, Color.MAGENTA);
             g.setPaint(gp);
-            g.fillRoundRect(x, y, size, size, 6,6);
+            g.fillRoundRect(x, y, size, size, 6, 6);
             g.setColor(Color.WHITE);
-            g.drawRoundRect(x+1, y+1, size-2, size-2, 6,6);
+            g.drawRoundRect(x + 1, y + 1, size - 2, size - 2, 6, 6);
         }
+
         @Override
         void drawBody(Graphics2D g, int x, int y, int size, int idx, int total) {
             float t = (idx % 5) / 5f;
-            Color c = new Color(0, (int)(180*(1-t)), 255);
+            Color c = new Color(0, (int) (180 * (1 - t)), 255);
             g.setColor(c);
             g.fillRect(x, y, size, size);
         }
+
         @Override
         void drawApple(Graphics2D g, int x, int y, int size) {
             g.setColor(Color.PINK);
             g.fillOval(x, y, size, size);
-            g.setColor(Color.WHITE); g.drawOval(x, y, size, size);
+            g.setColor(Color.WHITE);
+            g.drawOval(x, y, size, size);
         }
     },
     RETRO {
         @Override
         void drawHead(Graphics2D g, int x, int y, int size) {
-            g.setColor(new Color(0,120,0));
+            g.setColor(new Color(0, 120, 0));
             g.fillRect(x, y, size, size);
         }
+
         @Override
         void drawBody(Graphics2D g, int x, int y, int size, int idx, int total) {
-            g.setColor(new Color(0,100,0));
+            g.setColor(new Color(0, 100, 0));
             g.fillRect(x, y, size, size);
             g.setColor(new Color(30, 30, 30, 40));
-            g.fillRect(x+2, y+2, size-4, size-4);
+            g.fillRect(x + 2, y + 2, size - 4, size - 4);
         }
+
         @Override
         void drawApple(Graphics2D g, int x, int y, int size) {
-            g.setColor(new Color(180,20,20)); g.fillOval(x,y,size,size);
+            g.setColor(new Color(180, 20, 20));
+            g.fillOval(x, y, size, size);
         }
     },
     DIGITAL {
         @Override
         void drawHead(Graphics2D g, int x, int y, int size) {
-            g.setColor(new Color(70,70,200));
+            g.setColor(new Color(70, 70, 200));
             g.fillRect(x, y, size, size);
             g.setColor(Color.LIGHT_GRAY);
-            g.fillRect(x+3, y+3, size-6, size-6);
+            g.fillRect(x + 3, y + 3, size - 6, size - 6);
         }
+
         @Override
         void drawBody(Graphics2D g, int x, int y, int size, int idx, int total) {
-            if (idx%2==0) g.setColor(new Color(20,20,60));
-            else g.setColor(new Color(30,30,100));
+            if (idx % 2 == 0) {
+                g.setColor(new Color(20, 20, 60)); 
+            }else {
+                g.setColor(new Color(30, 30, 100));
+            }
             g.fillRect(x, y, size, size);
         }
+
         @Override
         void drawApple(Graphics2D g, int x, int y, int size) {
-            g.setColor(new Color(255,120,0));
-            g.fillOval(x,y,size,size);
+            g.setColor(new Color(255, 120, 0));
+            g.fillOval(x, y, size, size);
         }
     },
     CHROME {
         @Override
         void drawHead(Graphics2D g, int x, int y, int size) {
-            GradientPaint gp = new GradientPaint(x,y,Color.LIGHT_GRAY,x+size,y+size,Color.DARK_GRAY);
+            GradientPaint gp = new GradientPaint(x, y, Color.LIGHT_GRAY, x + size, y + size, Color.DARK_GRAY);
             g.setPaint(gp);
-            g.fillRoundRect(x,y,size,size,8,8);
+            g.fillRoundRect(x, y, size, size, 8, 8);
         }
+
         @Override
         void drawBody(Graphics2D g, int x, int y, int size, int idx, int total) {
-            GradientPaint gp = new GradientPaint(x,y,Color.WHITE,x+size,y+size,Color.GRAY);
+            GradientPaint gp = new GradientPaint(x, y, Color.WHITE, x + size, y + size, Color.GRAY);
             g.setPaint(gp);
-            g.fillRect(x,y,size,size);
+            g.fillRect(x, y, size, size);
         }
+
         @Override
         void drawApple(Graphics2D g, int x, int y, int size) {
             GradientPaint gp = new GradientPaint(x, y, Color.RED, x + size, y + size, new Color(139, 0, 0));
             g.setPaint(gp);
-            g.fillOval(x,y,size,size);
+            g.fillOval(x, y, size, size);
         }
     };
 
     abstract void drawHead(Graphics2D g, int x, int y, int size);
+
     abstract void drawBody(Graphics2D g, int x, int y, int size, int idx, int total);
+
     abstract void drawApple(Graphics2D g, int x, int y, int size);
 }
 
 /* ---------- Particle System ---------- */
 class ParticleSystem {
+
     private final List<Particle> parts = Collections.synchronizedList(new ArrayList<>());
     private final Random rand = new Random();
 
     public void emit(int cx, int cy, Skin skin) {
         int n = 18 + rand.nextInt(10);
         for (int i = 0; i < n; i++) {
-            parts.add(new Particle(cx, cy, (rand.nextDouble()-0.5)*4, (rand.nextDouble()-1.5)*4, 600 + rand.nextInt(400), skin));
+            parts.add(new Particle(cx, cy, (rand.nextDouble() - 0.5) * 4, (rand.nextDouble() - 1.5) * 4, 600 + rand.nextInt(400), skin));
         }
     }
 
@@ -824,42 +955,61 @@ class ParticleSystem {
     }
 
     public void render(Graphics2D g) {
-        synchronized(parts) {
-            for (Particle p : parts) p.render(g);
+        synchronized (parts) {
+            for (Particle p : parts) {
+                p.render(g);
+            }
         }
     }
 
     static class Particle {
-        double x,y, vx, vy;
+
+        double x, y, vx, vy;
         long born, life;
         final Skin skin;
+
         public Particle(double x, double y, double vx, double vy, long life, Skin s) {
-            this.x=x; this.y=y; this.vx=vx; this.vy=vy; this.born=System.currentTimeMillis(); this.life=life; this.skin=s;
+            this.x = x;
+            this.y = y;
+            this.vx = vx;
+            this.vy = vy;
+            this.born = System.currentTimeMillis();
+            this.life = life;
+            this.skin = s;
         }
+
         boolean update(long now) {
             double t = (now - born) / 1000.0;
-            x += vx; y += vy + 0.5 * t;
+            x += vx;
+            y += vy + 0.5 * t;
             return now - born < life;
         }
+
         void render(Graphics2D g) {
             long age = System.currentTimeMillis() - born;
-            float alpha = Math.max(0, 1f - (float)age / (float)life);
+            float alpha = Math.max(0, 1f - (float) age / (float) life);
             Composite old = g.getComposite();
             g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
             int s = 4;
             g.setColor(Color.YELLOW);
-            g.fill(new Ellipse2D.Double(x - s/2, y - s/2, s, s));
+            g.fill(new Ellipse2D.Double(x - s / 2, y - s / 2, s, s));
             g.setComposite(old);
         }
     }
 }
 
 /* ---------- Simple BFS AI Controller ---------- */
-enum Direction { UP, DOWN, LEFT, RIGHT }
+enum Direction {
+    UP, DOWN, LEFT, RIGHT
+}
 
 class AIController {
+
     private final GamePanel gp;
-    public AIController(GamePanel gp) { this.gp = gp; }
+
+    public AIController(GamePanel gp) {
+        this.gp = gp;
+    }
 
     // returns next Direction (or null to keep)
     public Direction nextMove(int hx, int hy, int ax, int ay, int bodyLen, int[] sx, int[] sy, List<Point> obstacles) {
@@ -872,10 +1022,14 @@ class AIController {
         int goalY = ay / unit;
 
         boolean[][] blocked = new boolean[cols][rows];
-        for (Point p : obstacles) blocked[p.x / unit][p.y / unit] = true;
+        for (Point p : obstacles) {
+            blocked[p.x / unit][p.y / unit] = true;
+        }
         for (int i = 0; i < bodyLen; i++) {
-            if (i == 0) continue; // allow head cell
-            blocked[sx[i]/unit][sy[i]/unit] = true;
+            if (i == 0) {
+                continue; // allow head cell
+
+                        }blocked[sx[i] / unit][sy[i] / unit] = true;
         }
 
         // BFS
@@ -885,42 +1039,63 @@ class AIController {
         int[][] py = new int[cols][rows];
         int[][] pd = new int[cols][rows];
         dq.add(new int[]{startX, startY});
-        vis[startX][startY]=true;
-        int[] dx = {0,0,-1,1};
-        int[] dy = {-1,1,0,0};
-        int[] dirIdx = {0,1,2,3};
+        vis[startX][startY] = true;
+        int[] dx = {0, 0, -1, 1};
+        int[] dy = {-1, 1, 0, 0};
+        int[] dirIdx = {0, 1, 2, 3};
         boolean found = false;
         while (!dq.isEmpty()) {
             int[] c = dq.poll();
-            if (c[0]==goalX && c[1]==goalY) { found = true; break; }
-            for (int k=0;k<4;k++) {
-                int nx = c[0]+dx[k], ny = c[1]+dy[k];
-                if (nx<0||nx>=cols||ny<0||ny>=rows) continue;
-                if (vis[nx][ny]) continue;
-                if (blocked[nx][ny]) continue;
-                vis[nx][ny]=true;
-                px[nx][ny]=c[0]; py[nx][ny]=c[1]; pd[nx][ny]=k;
-                dq.add(new int[]{nx,ny});
+            if (c[0] == goalX && c[1] == goalY) {
+                found = true;
+                break;
+            }
+            for (int k = 0; k < 4; k++) {
+                int nx = c[0] + dx[k], ny = c[1] + dy[k];
+                if (nx < 0 || nx >= cols || ny < 0 || ny >= rows) {
+                    continue;
+                }
+                if (vis[nx][ny]) {
+                    continue;
+                }
+                if (blocked[nx][ny]) {
+                    continue;
+                }
+                vis[nx][ny] = true;
+                px[nx][ny] = c[0];
+                py[nx][ny] = c[1];
+                pd[nx][ny] = k;
+                dq.add(new int[]{nx, ny});
             }
         }
-        if (!found) return null;
+        if (!found) {
+            return null;
+        }
         // reconstruct path from goal to start
         int cx = goalX, cy = goalY;
         int lastDir = -1;
-        while (!(cx==startX && cy==startY)) {
+        while (!(cx == startX && cy == startY)) {
             lastDir = pd[cx][cy];
             int tx = px[cx][cy], ty = py[cx][cy];
-            cx = tx; cy = ty;
+            cx = tx;
+            cy = ty;
         }
-        if (lastDir == 0) return Direction.UP;
-        if (lastDir == 1) return Direction.DOWN;
-        if (lastDir == 2) return Direction.LEFT;
+        if (lastDir == 0) {
+            return Direction.UP;
+        }
+        if (lastDir == 1) {
+            return Direction.DOWN;
+        }
+        if (lastDir == 2) {
+            return Direction.LEFT;
+        }
         return Direction.RIGHT;
     }
 }
 
 /* ---------- Optional joystick support via runtime reflection (JInput) ---------- */
 class OptionalJoystick {
+
     private final GamePanel gp;
     private Object controllerEnv = null;
     private Object[] controllers = null;
@@ -946,26 +1121,38 @@ class OptionalJoystick {
     }
 
     public void poll() {
-        if (!available) return;
+        if (!available) {
+            return;
+        }
         try {
             for (Object c : controllers) {
                 String type = c.getClass().getMethod("getType").invoke(c).toString();
                 // only process gamepad/joystick types
-                if (!type.toLowerCase().contains("stick") && !type.toLowerCase().contains("gamepad")) continue;
+                if (!type.toLowerCase().contains("stick") && !type.toLowerCase().contains("gamepad")) {
+                    continue;
+                }
                 boolean polled = (boolean) c.getClass().getMethod("poll").invoke(c);
-                if (!polled) continue;
+                if (!polled) {
+                    continue;
+                }
                 Object[] components = (Object[]) c.getClass().getMethod("getComponents").invoke(c);
                 for (Object comp : components) {
                     String compName = (String) comp.getClass().getMethod("getName").invoke(comp);
                     float value = (float) comp.getClass().getMethod("getPollData").invoke(comp);
                     // simple axis mapping: value < -0.5 -> left/up ; > 0.5 -> right/down
                     if (compName.toLowerCase().contains("x") || compName.toLowerCase().contains("rx")) {
-                        if (value < -0.5f) gp.changeDirection(Direction.LEFT);
-                        else if (value > 0.5f) gp.changeDirection(Direction.RIGHT);
+                        if (value < -0.5f) {
+                            gp.changeDirection(Direction.LEFT); 
+                        }else if (value > 0.5f) {
+                            gp.changeDirection(Direction.RIGHT);
+                        }
                     }
                     if (compName.toLowerCase().contains("y") || compName.toLowerCase().contains("ry")) {
-                        if (value < -0.5f) gp.changeDirection(Direction.UP);
-                        else if (value > 0.5f) gp.changeDirection(Direction.DOWN);
+                        if (value < -0.5f) {
+                            gp.changeDirection(Direction.UP); 
+                        }else if (value > 0.5f) {
+                            gp.changeDirection(Direction.DOWN);
+                        }
                     }
                     // buttons can map to pause/restart etc.
                     if (compName.toLowerCase().contains("button")) {
@@ -983,4 +1170,3 @@ class OptionalJoystick {
 }
 
 /* ---------- END OF FILE ---------- */
-
